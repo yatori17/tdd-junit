@@ -10,4 +10,9 @@ class TddJunitApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void testExample() {
+
+	}
+
 }
