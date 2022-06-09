@@ -13,6 +13,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
+@TddJunitApplicationTests
 public class BookServiceTest {
 
     @DisplayName("Valida ISBN Success")

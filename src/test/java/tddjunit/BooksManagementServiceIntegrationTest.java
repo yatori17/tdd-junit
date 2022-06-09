@@ -1,7 +1,9 @@
 package tddjunit;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
+@TddJunitApplicationTests
 public class BooksManagementServiceIntegrationTest {
 
     @Autowired
@@ -24,12 +27,12 @@ public class BooksManagementServiceIntegrationTest {
     public void testAddBookToWishList() {
         Book book = new Book();
         book.setTitle("Fundamentos da Computação Gráfica");
-        book.setAuthor("Jonas Gomes");
+        book.setAuthor("Jonas Gomes da Silva Lima Gomes");
         book.setIsbn13("978-85-244-0200-5");
         Book newBook = bookService.save(book);
 
         assertNotNull(newBook);
         assertNotNull(newBook.getId());
-        assertEquals("Jonas Gomes", newBook.getAuthor());
+        assertEquals("Jonas Gomes da Silva Lima Gomes", newBook.getAuthor());
     }
 }

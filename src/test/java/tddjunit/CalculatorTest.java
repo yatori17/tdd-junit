@@ -9,12 +9,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = TddJunitApplication.class)
+@TddJunitApplicationTests
 public class CalculatorTest {
 
     private final Calculator calculator = new Calculator();
 
     @Test
     void addition() {
-        assertEquals(120, calculator.add(4,30));
+        assertEquals(34, calculator.add(4,30));
     }
 }

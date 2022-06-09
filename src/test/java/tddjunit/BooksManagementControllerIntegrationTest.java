@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@TddJunitApplicationTests
 public class BooksManagementControllerIntegrationTest {
 
     @Autowired
@@ -29,6 +30,6 @@ public class BooksManagementControllerIntegrationTest {
         book.setAuthor("Jonas Gomes");
         book.setIsbn13("978-85-244-0200-5");
         ResponseEntity response = bookController.createBook(book);
-        assertEquals(response.getStatusCode(), HttpStatus.NOT_FOUND);
+        assertEquals(response.getStatusCode(), HttpStatus.CREATED);
     }
 }
