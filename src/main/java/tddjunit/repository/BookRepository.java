@@ -7,4 +7,7 @@ import tddjunit.domain.Book;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
     Book findByAuthor(String author);
+
+    @Override
+    <S extends Book> S save(S entity);
 }
